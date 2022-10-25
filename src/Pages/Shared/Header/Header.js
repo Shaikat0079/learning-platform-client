@@ -5,8 +5,12 @@ import Navbar from 'react-bootstrap/Navbar';
 import { SiUnity } from "react-icons/si";
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
+import { useContext } from 'react';
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const { user } = useContext(AuthContext);
+
     return (
         <div>
             <Navbar className='mb-2' collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -20,7 +24,7 @@ const Header = () => {
                             <Nav.Link href="#pricing">Pricing</Nav.Link>
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">More deets</Nav.Link>
+                            <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
                             <Nav.Link eventKey={2} href="#memes">
                                 Dank memes
                             </Nav.Link>
