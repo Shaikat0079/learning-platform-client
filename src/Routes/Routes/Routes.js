@@ -11,12 +11,12 @@ export const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5002/courses')
+                loader: () => fetch('https://education-server-three.vercel.app/courses')
             },
             {
                 path: '/course/:id',
                 element: <CodingLanguage></CodingLanguage>,
-                loader: ({ params }) => fetch(`http://localhost:5002/courses/${params.id}`)
+                loader: ({ params }) => fetch(`https://education-server-three.vercel.app/courses/${params.id}`)
             }
         ]
     }

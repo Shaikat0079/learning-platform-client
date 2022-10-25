@@ -5,7 +5,7 @@ import { MdOutlineStar } from "react-icons/md";
 import { MdMonetizationOn } from "react-icons/md";
 
 const CourseSummaryCard = ({ courses }) => {
-    const { name, id, description, image_url, rating } = courses;
+    const { name, id, description, image_url, rating, price } = courses;
     return (
         <div>
             <Card className="text-center">
@@ -23,7 +23,7 @@ const CourseSummaryCard = ({ courses }) => {
                 </Card.Body>
                 <Card.Footer className="d-flex justify-content-between">
                     <div><MdOutlineStar /><span>{rating}</span></div>
-                    <div>< MdMonetizationOn /><span>{rating}</span></div>
+                    <div>< MdMonetizationOn /><span>{price} TK</span></div>
                 </Card.Footer>
             </Card>
         </div>
