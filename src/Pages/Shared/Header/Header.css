@@ -1,0 +1,12 @@
+.click-to-top span {
+  display: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgb(249, 107, 83);
+  color: #fff;
+}
+.click-to-top:hover span {
+  display: block;
+}

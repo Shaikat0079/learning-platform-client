@@ -1,9 +1,26 @@
+import { GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
+import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle } from "react-icons/fa";
+import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Login = () => {
+
+    const { providerLogin } = useContext(AuthContext);
+
+    const googleProvider = new GoogleAuthProvider();
+
+    const handleGooglSignIn = () => {
+        providerLogin(googleProvider)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+            })
+            .catch(e => console.error(e));
+    }
+
     return (
         <div>
             <Form>
@@ -26,7 +43,7 @@ const Login = () => {
                     Submit
                 </Button>
             </Form>
-            <Button className='my-3' variant="outline-secondary"><FaGoogle /> Sign IN With Google</Button>
+            <Button onClick={handleGooglSignIn} className='my-3' variant="outline-secondary"><FaGoogle /> Sign IN With Google</Button>
         </div>
     );
 };
