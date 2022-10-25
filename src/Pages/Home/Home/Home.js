@@ -1,12 +1,18 @@
 import React from 'react';
-import { useState } from 'react';
+import { useLoaderData } from 'react-router-dom';
+import CourseSummaryCard from '../../Shared/CourseSummaryCard/CourseSummaryCard';
+import './Home.css'
 
 const Home = () => {
-    const [course, setCourse] = useState();
-
+    const allCourses = useLoaderData();
     return (
-        <div>
-            <h2>This is Home Component!</h2>
+        <div className='m-4'>
+            <h2>Total Courses {allCourses.length}</h2>
+            <div className='box-style'>
+                {
+                    allCourses.map(courses => <CourseSummaryCard key={courses.id} courses={courses}></CourseSummaryCard>)
+                }
+            </div>
         </div>
     );
 };
