@@ -25,9 +25,7 @@ const Header = () => {
                         </Nav>
                         <Nav>
                             <Nav.Link href="#deets">{user?.displayName}</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
-                                Dank memes
-                            </Nav.Link>
+                            <Button className='mx-2' variant='danger'><Link className='text-white' to='/login'>Login</Link></Button>
                             <Button variant='primary'><Link className='text-white' to='/'>All Courses</Link></Button>
                         </Nav>
                     </Navbar.Collapse>
