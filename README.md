@@ -2,11 +2,13 @@
 
 <h2><a href="https://education-with-coding-language.web.app/" target="_blank">MY Edu Live Link</a><h2>
 <ul>
-    <li>It has been a one of the difficult assignments so far!</li>
+    <li>It has been one of the difficult assignment so far!</li>
     <li>Here Firebase has been used for Authentication.</li>
     <li>Private Route has been added here!</li>
     <li>React Dom has been initialized!</li>
-    <li>With the help of Vercel</li>
+    <li>With the help of Vercel api has created</li>
+    <li>React Bootstrap has been added</li>
+    <li>React Icons Added</li>
 </ul>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
