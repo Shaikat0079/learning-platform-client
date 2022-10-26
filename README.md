@@ -1,5 +1,14 @@
 # Getting Started with Create React App
 
+<h2><a href="https://education-with-coding-language.web.app/" target="_blank">MY Edu Live Link</a><h2>
+<ul>
+    <li>It has been a one of the difficult assignments so far!</li>
+    <li>Here Firebase has been used for Authentication.</li>
+    <li>Private Route has been added here!</li>
+    <li>React Dom has been initialized!</li>
+    <li>With the help of Vercel</li>
+</ul>
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
