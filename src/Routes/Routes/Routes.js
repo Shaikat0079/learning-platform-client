@@ -27,7 +27,8 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/course/:id',
-                element: <PrivateRoute><CodingLanguage></CodingLanguage></PrivateRoute>,
+                // element: <PrivateRoute><CodingLanguage></CodingLanguage></PrivateRoute>,
+                element: <CodingLanguage></CodingLanguage>,
                 loader: ({ params }) => fetch(`https://education-server-three.vercel.app/courses/${params.id}`)
             },
             // {
