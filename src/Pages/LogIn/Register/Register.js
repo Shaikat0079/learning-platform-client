@@ -1,10 +1,13 @@
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 const Register = () => {
+
+    const [error, setError] = useState('');
 
     const { createUser } = useContext(AuthContext);
 

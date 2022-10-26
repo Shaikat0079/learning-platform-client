@@ -3,7 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { SiUnity } from "react-icons/si";
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
@@ -13,11 +13,13 @@ import './Header.css';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleLogOut = () => {
         logOut()
             .then(() => { })
             .catch(e => console.error(e))
+        navigate('/')
     }
 
     return (
@@ -50,8 +52,8 @@ const Header = () => {
                                         :
                                         <GiBearFace className='text-white m-3' />
                                 }</>
-                            <Button className='mx-2' variant='danger'><Link className='text-white' to='/login'>Login</Link></Button>
-                            <Button variant='primary'><Link className='text-white' to='/'>All Courses</Link></Button>
+                            <Button className='mx-2' variant='danger'><Link className='text-white' to='/'>Login</Link></Button>
+                            <Button variant='primary'><Link className='text-white' to='/home'>All Courses</Link></Button>
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

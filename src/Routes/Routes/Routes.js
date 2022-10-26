@@ -10,8 +10,17 @@ export const routes = createBrowserRouter([
         path: '/',
         element: <Main></Main>,
         children: [
+            // {
+            //     path: '/',
+            //     element: <Home></Home>,
+            //     loader: () => fetch('https://education-server-three.vercel.app/courses')
+            // },
             {
                 path: '/',
+                element: <Login></Login>
+            },
+            {
+                path: '/home',
                 element: <Home></Home>,
                 loader: () => fetch('https://education-server-three.vercel.app/courses')
             },
@@ -20,10 +29,10 @@ export const routes = createBrowserRouter([
                 element: <CodingLanguage></CodingLanguage>,
                 loader: ({ params }) => fetch(`https://education-server-three.vercel.app/courses/${params.id}`)
             },
-            {
-                path: '/login',
-                element: <Login></Login>
-            },
+            // {
+            //     path: '/login',
+            //     element: <Login></Login>
+            // },
             {
                 path: '/register',
                 element: <Register></Register>
