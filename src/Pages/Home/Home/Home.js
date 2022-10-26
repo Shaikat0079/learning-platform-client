@@ -8,7 +8,6 @@ const Home = () => {
     const allCourses = useLoaderData();
     return (
         <div>
-            {/* <h2>Total Courses {allCourses.length}</h2> */}
             <div>
                 <div className='flexible'>
                     <div>

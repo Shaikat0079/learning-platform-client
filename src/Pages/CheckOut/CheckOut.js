@@ -18,6 +18,7 @@ const CheckOut = () => {
     }
     return (
         <Container>
+            <h1 className='text-primary'>Enter your information</h1>
             <Form onSubmit={handlePurchase}>
                 <Form.Group className="mb-3">
                     <Form.Label>Your Name</Form.Label>

@@ -27,7 +27,7 @@ const Header = () => {
             <Navbar className='mb-2' collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <SiUnity className='text-white mx-2' />
-                    <Navbar.Brand>MY Edu</Navbar.Brand>
+                    <Link to='/myedu'><Navbar.Brand>MY Edu</Navbar.Brand></Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
@@ -41,7 +41,10 @@ const Header = () => {
 
                                     <Button onClick={handleLogOut}>Log out</Button>
                                     :
-                                    <Link className='text-white' to='/register'>Register</Link>
+                                    <>
+                                        <Button className='mx-2' variant='danger'><Link className='text-white' to='/register'>Register</Link></Button>
+                                        <Button className='mx-2' variant='danger'><Link className='text-white' to='/'>Login</Link></Button>
+                                    </>
                             }
                             <>
                                 {
@@ -53,7 +56,7 @@ const Header = () => {
                                         :
                                         <GiBearFace className='text-white m-3' />
                                 }</>
-                            <Button className='mx-2' variant='danger'><Link className='text-white' to='/'>Login</Link></Button>
+
                             <Button variant='primary'><Link className='text-white' to='/home'>All Courses</Link></Button>
                         </Nav>
                     </Navbar.Collapse>

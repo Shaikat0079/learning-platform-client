@@ -19,7 +19,6 @@ const CourseSummaryCard = ({ courses }) => {
                             <>{description}</>
                         }
                     </Card.Text>
-                    {/* <Button variant="dark"><Link className='text-white' to={`/course/${id}`}>Go to</Link></Button> */}
                 </Card.Body>
                 <Card.Footer className="d-flex justify-content-between">
                     <div><MdOutlineStar /><span>{rating}</span></div>

@@ -8,6 +8,7 @@ import Faq from "../../Pages/FAQ/Faq";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/LogIn/Login/Login";
 import Register from "../../Pages/LogIn/Register/Register";
+import MyEdu from "../../Pages/MyEdu/MyEdu";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
@@ -15,14 +16,13 @@ export const routes = createBrowserRouter([
         path: '/',
         element: <Main></Main>,
         children: [
-            // {
-            //     path: '/',
-            //     element: <Home></Home>,
-            //     loader: () => fetch('https://education-server-three.vercel.app/courses')
-            // },
             {
                 path: '/',
                 element: <Login></Login>
+            },
+            {
+                path: '/myedu',
+                element: <MyEdu></MyEdu>
             },
             {
                 path: '/home',
@@ -31,7 +31,6 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/course/:id',
-                // element: <PrivateRoute><CodingLanguage></CodingLanguage></PrivateRoute>,
                 element: <CodingLanguage></CodingLanguage>,
                 loader: ({ params }) => fetch(`https://education-server-three.vercel.app/courses/${params.id}`)
             },
@@ -39,10 +38,6 @@ export const routes = createBrowserRouter([
                 path: '/checkout',
                 element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             },
-            // {
-            //     path: '/login',
-            //     element: <Login></Login>
-            // },
             {
                 path: '/register',
                 element: <Register></Register>
