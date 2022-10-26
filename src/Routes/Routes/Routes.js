@@ -3,6 +3,7 @@ import Main from "../../Layout/Main";
 import Blog from "../../Pages/Blog/Blog";
 import CheckOut from "../../Pages/CheckOut/CheckOut";
 import CodingLanguage from "../../Pages/CodingLanguages/CodingLanguages/CodingLanguage";
+import Error from "../../Pages/Error/Error";
 import Faq from "../../Pages/FAQ/Faq";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/LogIn/Login/Login";
@@ -53,6 +54,10 @@ export const routes = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog></Blog>
+            },
+            {
+                path: '*',
+                element: <Error></Error>
             }
         ]
     }
