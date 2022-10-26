@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
+import CheckOut from "../../Pages/CheckOut/CheckOut";
 import CodingLanguage from "../../Pages/CodingLanguages/CodingLanguages/CodingLanguage";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/LogIn/Login/Login";
@@ -30,6 +31,10 @@ export const routes = createBrowserRouter([
                 // element: <PrivateRoute><CodingLanguage></CodingLanguage></PrivateRoute>,
                 element: <CodingLanguage></CodingLanguage>,
                 loader: ({ params }) => fetch(`https://education-server-three.vercel.app/courses/${params.id}`)
+            },
+            {
+                path: '/checkout',
+                element: <PrivateRoute><CheckOut></CheckOut></PrivateRoute>
             },
             // {
             //     path: '/login',
