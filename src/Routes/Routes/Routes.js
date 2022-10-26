@@ -4,6 +4,7 @@ import CodingLanguage from "../../Pages/CodingLanguages/CodingLanguages/CodingLa
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/LogIn/Login/Login";
 import Register from "../../Pages/LogIn/Register/Register";
+import PrivateRoute from "../PrivateRoute/PrivateRoute";
 
 export const routes = createBrowserRouter([
     {
@@ -26,7 +27,7 @@ export const routes = createBrowserRouter([
             },
             {
                 path: '/course/:id',
-                element: <CodingLanguage></CodingLanguage>,
+                element: <PrivateRoute><CodingLanguage></CodingLanguage></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://education-server-three.vercel.app/courses/${params.id}`)
             },
             // {

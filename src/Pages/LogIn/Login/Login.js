@@ -5,7 +5,7 @@ import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import { FaGoogle } from "react-icons/fa";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 
@@ -14,6 +14,9 @@ const Login = () => {
     const [error, setError] = useState('');
 
     const navigate = useNavigate();
+    const location = useLocation();
+
+    const from = location.state?.from?.pathname || '/home';
 
     const { providerLogin, signIn } = useContext(AuthContext);
 
@@ -24,7 +27,7 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
-                navigate('/home');
+                navigate(from, { replace: true });
             })
             .catch(e => console.error(e));
     }
@@ -40,7 +43,7 @@ const Login = () => {
                 console.log(user);
                 form.reset();
                 setError('');
-                navigate('/home')
+                navigate(from, { replace: true });
             })
             .catch(e => {
                 console.error(e)
