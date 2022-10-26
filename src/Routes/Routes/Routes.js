@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import Main from "../../Layout/Main";
+import Blog from "../../Pages/Blog/Blog";
 import CheckOut from "../../Pages/CheckOut/CheckOut";
 import CodingLanguage from "../../Pages/CodingLanguages/CodingLanguages/CodingLanguage";
+import Faq from "../../Pages/FAQ/Faq";
 import Home from "../../Pages/Home/Home/Home";
 import Login from "../../Pages/LogIn/Login/Login";
 import Register from "../../Pages/LogIn/Register/Register";
@@ -43,6 +45,14 @@ export const routes = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/faq',
+                element: <Faq></Faq>
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
         ]
     }
