@@ -8,7 +8,7 @@ import Button from 'react-bootstrap/Button';
 import { useContext } from 'react';
 import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 import { Image } from 'react-bootstrap';
-import { MdPeople } from "react-icons/md";
+import { GiBearFace } from "react-icons/gi";
 import './Header.css';
 
 const Header = () => {
@@ -48,7 +48,7 @@ const Header = () => {
                                             <span>{user?.displayName}</span>
                                         </div>
                                         :
-                                        <MdPeople />
+                                        <GiBearFace className='text-white m-3' />
                                 }</>
                             <Button className='mx-2' variant='danger'><Link className='text-white' to='/login'>Login</Link></Button>
                             <Button variant='primary'><Link className='text-white' to='/'>All Courses</Link></Button>
