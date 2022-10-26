@@ -27,7 +27,7 @@ const Header = () => {
             <Navbar className='mb-2' collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
                     <SiUnity className='text-white mx-2' />
-                    <Navbar.Brand href="#home">MY Edu</Navbar.Brand>
+                    <Navbar.Brand>MY Edu</Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">

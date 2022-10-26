@@ -9,16 +9,18 @@ const Main = () => {
     return (
         <div>
             <Header></Header>
-            <Container>
-                <Row>
+
+            {/* <Row>
                     <Col lg='2' sm='6'>
                         <LeftSideNav></LeftSideNav>
                     </Col>
-                    <Col lg='10' sm='6'>
-                        <Outlet></Outlet>
-                    </Col>
-                </Row>
-            </Container>
+                    <Col lg='10' sm='6'> */}
+            <div className='m-3'>
+                <Outlet></Outlet>
+            </div>
+            {/* </Col>
+                </Row> */}
+
             <Footer></Footer>
         </div>
     );

@@ -1,11 +1,16 @@
 .box-style {
   display: grid;
   grid-template-columns: 1fr;
-  gap: 10px;
+  gap: 20px;
 }
 
 @media only screen and (min-width: 1000px) {
   .box-style {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .flexible {
+    display: flex;
+    gap: 100px;
+    justify-content: space-between;
   }
 }

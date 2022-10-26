@@ -24,9 +24,13 @@ const Register = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user);
+                setError('');
                 form.reset();
             })
-            .catch(e => console.error(e));
+            .catch(e => {
+                console.error(e)
+                setError(e.message);
+            });
 
     }
 
@@ -53,6 +57,9 @@ const Register = () => {
                 <Button variant="primary" type="submit">
                     Register
                 </Button>
+                <Form.Text className="text-danger d-block">
+                    {error}
+                </Form.Text>
             </Form>
         </div>
     );

@@ -11,10 +11,10 @@ const CourseSummaryCard = ({ courses }) => {
             <Card className="text-center">
                 <Card.Header>WELCOME to {name}</Card.Header>
                 <Card.Body>
-                    <Card.Img style={{ height: '250px' }} variant="top" src={image_url} />
+                    <Card.Img style={{ height: '250px', width: '250px' }} variant="top" src={image_url} />
                     <Card.Text>
-                        {description.length > 200 ?
-                            <>{description.slice(0, 200) + '...'} <Link to={`/course/${id}`}>Read More</Link></>
+                        {description.length > 30 ?
+                            <>{description.slice(0, 30) + '...'} <Link to={`/course/${id}`}>Read More</Link></>
                             :
                             <>{description}</>
                         }
