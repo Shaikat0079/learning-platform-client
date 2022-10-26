@@ -40,7 +40,7 @@ const Login = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Submit
+                    Login
                 </Button>
             </Form>
             <Button onClick={handleGooglSignIn} className='my-3' variant="outline-secondary"><FaGoogle /> Sign IN With Google</Button>

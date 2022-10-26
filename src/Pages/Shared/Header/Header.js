@@ -12,7 +12,13 @@ import { MdPeople } from "react-icons/md";
 import './Header.css';
 
 const Header = () => {
-    const { user } = useContext(AuthContext);
+    const { user, logOut } = useContext(AuthContext);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(() => { })
+            .catch(e => console.error(e))
+    }
 
     return (
         <div>
@@ -23,20 +29,27 @@ const Header = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link href="#features">Features</Nav.Link>
-                            <Nav.Link href="#pricing">Pricing</Nav.Link>
+                            <Nav.Link href="#features">FAQ</Nav.Link>
+                            <Nav.Link href="#pricing">Blog</Nav.Link>
                         </Nav>
                         <Nav>
-                            {/* <Nav.Link>{user?.displayName}</Nav.Link> */}
                             {
-                                user?.photoURL ?
-                                    <div className='click-to-top m-3'>
-                                        <Image style={{ height: '30px' }} roundedCircle src={user.photoURL}></Image>
-                                        <span>{user?.displayName}</span>
-                                    </div>
+                                user?.uid ?
+
+                                    <Button onClick={handleLogOut}>Log out</Button>
                                     :
-                                    <MdPeople />
+                                    <Link className='text-white' to='/register'>Register</Link>
                             }
+                            <>
+                                {
+                                    user?.photoURL ?
+                                        <div className='click-to-top m-3'>
+                                            <Image style={{ height: '30px' }} roundedCircle src={user.photoURL}></Image>
+                                            <span>{user?.displayName}</span>
+                                        </div>
+                                        :
+                                        <MdPeople />
+                                }</>
                             <Button className='mx-2' variant='danger'><Link className='text-white' to='/login'>Login</Link></Button>
                             <Button variant='primary'><Link className='text-white' to='/'>All Courses</Link></Button>
                         </Nav>
