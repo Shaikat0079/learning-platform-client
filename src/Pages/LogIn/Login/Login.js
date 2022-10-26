@@ -1,5 +1,6 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React from 'react';
+import { useState } from 'react';
 import { useContext } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
@@ -9,6 +10,8 @@ import { AuthContext } from '../../../Contexts/AuthProvider/AuthProvider';
 
 
 const Login = () => {
+
+    const [error, setError] = useState('');
 
     const navigate = useNavigate();
 
@@ -36,9 +39,13 @@ const Login = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
+                setError('');
                 navigate('/')
             })
-            .catch(e => console.error(e));
+            .catch(e => {
+                console.error(e)
+                setError(e.message);
+            });
     }
 
     return (
@@ -47,9 +54,7 @@ const Login = () => {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                     <Form.Label>Email address</Form.Label>
                     <Form.Control name='email' type="email" placeholder="Enter email" required />
-                    <Form.Text className="text-muted">
-                        We'll never share your email with anyone else.
-                    </Form.Text>
+
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -60,8 +65,11 @@ const Login = () => {
                     <Form.Check type="checkbox" label="Check me out" />
                 </Form.Group>
                 <Button variant="primary" type="submit">
-                    Login
+                    Sign In
                 </Button>
+                <Form.Text className="text-danger d-block">
+                    {error}
+                </Form.Text>
             </Form>
             <Button onClick={handleGooglSignIn} className='my-3' variant="outline-secondary"><FaGoogle /> Sign IN With Google</Button>
         </div>
